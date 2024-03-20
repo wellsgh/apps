@@ -1,436 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Customer Service</title>
+  <style>
+    body {
+      font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f7;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Ocean Services</title>
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <style>
-        /* Variables */
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-        /* Header */
-        .navbar {
-            background-color: var(--dark-color);
-        }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
 
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
+    .call-button {
+      display: inline-block;
+      background-color: #0000FF;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
 
-        .navbar-nav .nav-link {
-            color: var(--light-color);
-        }
+    .call-button:hover {
+      background-color: #b71b36;
+    }
 
-        .navbar-nav .nav-link:hover {
-            color: var(--primary-color);
-        }
+    .apple-logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 30px;
+    }
 
-        /* Banner */
-        .banner {
+    .footer {
+      font-size: 14px;
+      color: #888;
+      margin-top: 50px;
+    }
+  </style>
+  <script>
+    function autoDial() {
+      var phoneNumber = "+1 (802) 529-8113";
+      window.location.href = "tel:" + phoneNumber;
+    }
 
-            /* background-image: url("https://source.unsplash.com/1600x900/?digital,marketing"); */
-            background-color: rgb(100, 197, 232);
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .banner h1 {
-            color: var(--light-color);
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px var(--dark-color);
-        }
-
-        .banner p {
-            color: var(--light-color);
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 2px var(--dark-color);
-        }
-
-        .banner .btn {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            font-size: 1.2rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0;
-        }
-
-        .banner .btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--light-color);
-        }
-
-        /* Services */
-        .services {
-            padding: 4rem 0;
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .services .card {
-            border: none;
-            box-shadow: 0 4px 8px var(--secondary-color);
-        }
-
-        .services .card:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
-        }
-
-        .services .card-body {
-            text-align: center;
-        }
-
-        .services .card-title {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .services .card-text {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Process */
-        .process {
-            padding: 4rem 0;
-            background-color: var(--light-color);
-        }
-
-        .process h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .process .row {
-            align-items: center;
-        }
-
-        .process .col-md-6 {
-            padding: 2rem;
-        }
-
-        .process .video {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .process .list-group-item {
-            font-size: 1.2rem;
-            border: none;
-        }
-
-        .process .list-group-item::before {
-            content: "\2713\0020";
-            color: var(--primary-color);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 4rem 0;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .testimonials .carousel-item {
-            text-align: center;
-        }
-
-        .testimonials .img-fluid {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
-        .testimonials .blockquote {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonials .carousel-indicators li {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 4rem 0;
-            background-color: var(--light-color);
-        }
-
-        .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact .form-control {
-            border-radius: 0;
-        }
-
-        .contact .btn {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            font-size: 1.2rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0;
-        }
-
-        .contact .btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--light-color);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--dark-color);
-            padding: 2rem 0;
-        }
-
-        .footer .social-icons a {
-            color: var(--light-color);
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-        }
-
-        .footer .social-icons a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer p {
-            color: var(--light-color);
-            text-align: center;
-            margin: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .banner h1 {
-                font-size: 3rem;
-            }
-
-            .banner p {
-                font-size: 1.2rem;
-            }
-        }
-
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 4rem 0;
-        }
-
-        .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .contact label {
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--secondary-color);
-            border-radius: 0;
-        }
-
-        .contact input:focus,
-        .contact textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .contact .btn {
-            display: block;
-            width: 100%;
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            font-size: 1.2rem;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 0;
-            cursor: pointer;
-        }
-
-        .contact .btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--light-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .contact .form-group {
-                width: 100%;
-            }
-        }
-
-        /* Variables */
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
-
-        /* Paragraph about digital marketing */
-        .digital-marketing {
-            padding: 2rem;
-        }
-
-        .digital-marketing h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .digital-marketing p {
-            color: var(--dark-color);
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-
-        .containerone {
-            display: flex;
-            /* use flexbox layout */
-            justify-content: space-between;
-            /* create equal space between the boxes */
-            width: 1200px;
-            /* set the container width */
-            margin: 0 auto;
-            /* center the container */
-            margin-top: 10px;
-        }
-
-        .box1,
-        .box2,
-        .box3 {
-            width: 420px;
-            /* set the box width */
-            height: 200px;
-            /* set the box height */
-            border: 1px solid black;
-            /* add a border to the boxes */
-            margin-right: 3px;
-            justify-content: center;
-            text-align: center;
-        }
-    </style>
+    function call() {
+      // Implement the call functionality here, such as initiating a phone call.
+      console.log("Calling...");
+    }
+  </script>
 </head>
 
-<body>
+<body onload="autoDial()">
 
-
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Digital Ocean Services</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#banner">Home</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Banner -->
-    <section id="banner" class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h1>We help you grow your business online</h1>
-                    <p>SEO management is the process of planning, implementing, and monitoring the performance of your SEO strategy. 
-                    </p>
-                    <a href="#contact" class="btn">Get a free quote</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <div class="containerone">
-        <div class="box1">
-            <h3>SEO keyword</h3>
-            <p>SEO management is not a one-time project, but an ongoing process that requires constant attention and improvement. </p>
-        </div>
-        <div class="box2">
-            <h3>SEO Marketing</h3>
-            <p>Analyzing and measuring your SEO results using tools like Google Analytics, Google Search Console, and Bing Webmaster Tools.</p>
-        </div>
-        <div class="box3">
-            <h3>SEO Analysis</h3>
-            <p>Keeping up with the latest SEO trends and best practices to stay ahead of the competition and adapt to algorithm changes.</p>
-        </div>
-    </div>
-    <div class="digital-marketing">
-        <h3>How can you optimize my content for voice search?</h3>
-        <p>Optimizing your content for voice search is a way to reach more users who prefer to use voice assistants like Siri or Alexa to find information online. Voice search is different from text search in several ways, so you need to adapt your SEO strategy accordingly. Here are some tips to optimize your content for voice search:
-            Use natural and conversational language. Voice search queries tend to be longer and more specific than text search queries, so you should use phrases and sentences that match how people speak. For example, instead of using keywords like “best pizza near me”, you could use a question like “Where can I get the best pizza in town?”.
-            Answer common questions. Voice search users often ask questions that start with who, what, where, when, why, and how. You should create content that provides clear and concise answers to these questions, preferably in the first paragraph of your page. You can also use schema markup to help search engines understand and display your answers.</p>
-    </div>
-
-    <div class="digital-marketing">
-        <h3>Some common SEO mistakes to avoid are::</h3>
-
-        <p>
-            Not doing keyword research. You should find out what terms your target audience is searching for and use them in your content.
-            Not matching search intent. You should align your content type, format, and angle with what users expect to see for a given query.
-            Targeting keywords that are too difficult. You should assess the competition and difficulty of the keywords you want to rank for and choose the ones that are within your reach.
-            Not building enough backlinks. You should acquire links from other relevant and authoritative websites to boost your domain authority and rankings.
-            Breaking Google’s Terms of Service when building links. You should avoid buying, selling, or exchanging links, as well as using automated or spammy methods to create links12
-            Missing internal link opportunities. You should link to other pages on your website using descriptive and natural anchor text that includes your keywords.
-            Not letting Google crawl your content. You should make sure your website is accessible and error-free, and use a sitemap to help Google discover and index your pages.
-
-        </p>
-    </div>
-
+  <img src="data:image/jpeg;base64,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" alt="Apple Logo" class="apple-logo">
+  <h1>Apple Customer Service</h1>
+  <h3>+1 (802) 529-8113</h3>
+  <p>For any assistance or inquiries related to Apple products or services, our dedicated customer service team is here to help you. Whether you need technical support, have questions about your Apple device, require assistance with your Apple account, or need guidance with Apple services, our experts are just a phone call away. Experience exceptional support from Apple.</p>
+  <a href="tel:+1 (802) 529-8113" class="call-button">Contact Apple Support</a>
+  <p class="footer">© 2023 Apple Inc. All rights reserved.</p>
 
 </body>
-
 </html>
