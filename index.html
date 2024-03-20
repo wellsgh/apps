@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Ocean Services</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Variables */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+
+        /* Header */
+        .navbar {
+            background-color: var(--dark-color);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--light-color);
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Banner */
+        .banner {
+
+            /* background-image: url("https://source.unsplash.com/1600x900/?digital,marketing"); */
+            background-color: rgb(100, 197, 232);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner h1 {
+            color: var(--light-color);
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px var(--dark-color);
+        }
+
+        .banner p {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px var(--dark-color);
+        }
+
+        .banner .btn {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0;
+        }
+
+        .banner .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+
+        /* Services */
+        .services {
+            padding: 4rem 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .services .card {
+            border: none;
+            box-shadow: 0 4px 8px var(--secondary-color);
+        }
+
+        .services .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        .services .card-body {
+            text-align: center;
+        }
+
+        .services .card-title {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .services .card-text {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Process */
+        .process {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+
+        .process h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .process .row {
+            align-items: center;
+        }
+
+        .process .col-md-6 {
+            padding: 2rem;
+        }
+
+        .process .video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .process .list-group-item {
+            font-size: 1.2rem;
+            border: none;
+        }
+
+        .process .list-group-item::before {
+            content: "\2713\0020";
+            color: var(--primary-color);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonials .carousel-item {
+            text-align: center;
+        }
+
+        .testimonials .img-fluid {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials .blockquote {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact .form-control {
+            border-radius: 0;
+        }
+
+        .contact .btn {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0;
+        }
+
+        .contact .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            padding: 2rem 0;
+        }
+
+        .footer .social-icons a {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+
+        .footer .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer p {
+            color: var(--light-color);
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 3rem;
+            }
+
+            .banner p {
+                font-size: 1.2rem;
+            }
+        }
+
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .contact label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 0;
+        }
+
+        .contact input:focus,
+        .contact textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .contact .btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+
+        .contact .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact .form-group {
+                width: 100%;
+            }
+        }
+
+        /* Variables */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+
+        /* Paragraph about digital marketing */
+        .digital-marketing {
+            padding: 2rem;
+        }
+
+        .digital-marketing h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .digital-marketing p {
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .containerone {
+            display: flex;
+            /* use flexbox layout */
+            justify-content: space-between;
+            /* create equal space between the boxes */
+            width: 1200px;
+            /* set the container width */
+            margin: 0 auto;
+            /* center the container */
+            margin-top: 10px;
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            width: 420px;
+            /* set the box width */
+            height: 200px;
+            /* set the box height */
+            border: 1px solid black;
+            /* add a border to the boxes */
+            margin-right: 3px;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Digital Ocean Services</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#banner">Home</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner -->
+    <section id="banner" class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1>We help you grow your business online</h1>
+                    <p>SEO management is the process of planning, implementing, and monitoring the performance of your SEO strategy. 
+                    </p>
+                    <a href="#contact" class="btn">Get a free quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="containerone">
+        <div class="box1">
+            <h3>SEO keyword</h3>
+            <p>SEO management is not a one-time project, but an ongoing process that requires constant attention and improvement. </p>
+        </div>
+        <div class="box2">
+            <h3>SEO Marketing</h3>
+            <p>Analyzing and measuring your SEO results using tools like Google Analytics, Google Search Console, and Bing Webmaster Tools.</p>
+        </div>
+        <div class="box3">
+            <h3>SEO Analysis</h3>
+            <p>Keeping up with the latest SEO trends and best practices to stay ahead of the competition and adapt to algorithm changes.</p>
+        </div>
+    </div>
+    <div class="digital-marketing">
+        <h3>How can you optimize my content for voice search?</h3>
+        <p>Optimizing your content for voice search is a way to reach more users who prefer to use voice assistants like Siri or Alexa to find information online. Voice search is different from text search in several ways, so you need to adapt your SEO strategy accordingly. Here are some tips to optimize your content for voice search:
+            Use natural and conversational language. Voice search queries tend to be longer and more specific than text search queries, so you should use phrases and sentences that match how people speak. For example, instead of using keywords like “best pizza near me”, you could use a question like “Where can I get the best pizza in town?”.
+            Answer common questions. Voice search users often ask questions that start with who, what, where, when, why, and how. You should create content that provides clear and concise answers to these questions, preferably in the first paragraph of your page. You can also use schema markup to help search engines understand and display your answers.</p>
+    </div>
+
+    <div class="digital-marketing">
+        <h3>Some common SEO mistakes to avoid are::</h3>
+
+        <p>
+            Not doing keyword research. You should find out what terms your target audience is searching for and use them in your content.
+            Not matching search intent. You should align your content type, format, and angle with what users expect to see for a given query.
+            Targeting keywords that are too difficult. You should assess the competition and difficulty of the keywords you want to rank for and choose the ones that are within your reach.
+            Not building enough backlinks. You should acquire links from other relevant and authoritative websites to boost your domain authority and rankings.
+            Breaking Google’s Terms of Service when building links. You should avoid buying, selling, or exchanging links, as well as using automated or spammy methods to create links12
+            Missing internal link opportunities. You should link to other pages on your website using descriptive and natural anchor text that includes your keywords.
+            Not letting Google crawl your content. You should make sure your website is accessible and error-free, and use a sitemap to help Google discover and index your pages.
+
+        </p>
+    </div>
+
+
+</body>
+
+</html>
